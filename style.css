@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #bdbdbd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* container */
+.container {
+  width: 340px;
+  background: black;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+/* tabs */
+.tabs {
+  display: flex;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #222;
+  color: white;
+}
+
+.tabs button.active {
+  background: rgb(37, 53, 194);
+}
+
+/* views */
+.view {
+  display: none;
+}
+
+.view.show {
+  display: block;
+}
+
+/* calculator display */
+#Display {
+  width: 100%;
+  font-size: 2.5rem;
+  padding: none;
+  text-align: right;
+  border: none;
+  background: black;
+  color: white;
+}
+
+/* buttons */
+#Keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+#Keys button {
+  height: 60px;
+  border-radius: 15px;
+  border: none;
+  background: #444;
+  color: white;
+  font-size: 1.2rem;
+}
+
+#Keys button:hover {
+  background: #666;
+}
+
+#history {
+  margin-top: 10px;
+  color: white;
+  font-size: 0.9rem;
+  background: #111;
+  padding: 8px;
+}
+
+/* converter */
+#conv input, #conv select {
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px 0;
+}
+
+#conv button {
+  width: 100%;
+  padding: 10px;
+  background: rgb(37, 53, 194);
+  border: none;
+  color: white;
+}
+
+#result {
+  margin-top: 12px;
+  padding: 10px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+}
