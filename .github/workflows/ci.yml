@@ -1,0 +1,27 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - feature-ui-upgrade
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: docker build -t calculator-app .
+
+      - name: Run container test
+        run: |
+          docker run -d -p 8085:80 --name test-container calculator-app
+          sleep 5
+          curl -f http://localhost:8085 || exit 1
+
+      - name: Stop container
+        run: docker stop test-container
