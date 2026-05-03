@@ -22,6 +22,9 @@ jobs:
           docker run -d -p 8085:80 --name test-container calculator-app
           sleep 5
           curl -f http://localhost:8085 || exit 1
+          docker exec test-container ls /usr/share/nginx/html
 
       - name: Stop container
         run: docker stop test-container
+
+    
